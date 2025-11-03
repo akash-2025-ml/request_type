@@ -17,8 +17,8 @@ import datetime
 # )
 
 
-llm = OllamaLLM(model="moondream")
-# llm = OllamaLLM(model="llama3.2")
+# llm = OllamaLLM(model="moondream")
+llm = OllamaLLM(model="llama3.2")
 # ---- FUNCTIONS ---- #
 import psutil
 
