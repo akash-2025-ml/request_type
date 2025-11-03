@@ -1,6 +1,6 @@
 import redis
 
-from main import classification_email
+from auto import classify_email
 import datetime
 
 r = redis.Redis(host="localhost", port=6379, db=0, decode_responses=True)
@@ -15,7 +15,7 @@ def get_value(id):
     end = datetime.datetime.now()
     print("#message_fetch_redis#end#" + str(end))
     print("total time taken by redis = ", (end - strat))
-    return classification_email(outp)
+    return classify_email(outp)
 
 
 # r.set(
