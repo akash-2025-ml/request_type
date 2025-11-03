@@ -1,0 +1,11 @@
+transformers
+torch
+langchain 
+langchain-core 
+langchain-google-genai 
+langchain-community
+sentencepiece
+redis
+redis[hiredis]
+fastapi 
+uvicorn
