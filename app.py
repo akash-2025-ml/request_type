@@ -18,7 +18,9 @@ class InputData(BaseModel):
 
 # Define response model (optional, you can return dict directly)
 class OutputData(BaseModel):
-    result: str
+    # result: str
+    signal: str
+    value: str
 
 
 @app.post("/process", response_model=OutputData)
@@ -29,7 +31,8 @@ async def process_text(data: InputData):
     end = datetime.datetime.now()
     print("request_type#fast api end" + str(end))
     print("total time taken by fast api = ", (end - strat1))
-    return {"result": output_text}
+    # return {"result": output_text}
+    return {"signal": "request_type", "value": output_text}
 
 
 # Root endpoint (optional)
