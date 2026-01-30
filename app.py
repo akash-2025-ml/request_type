@@ -4,8 +4,8 @@ from pydantic import BaseModel
 from redis_1 import get_value
 import datetime
 
-strat1 = datetime.datetime.now()
-print("request_type#fast api start" + str(strat1))
+# strat1 = datetime.datetime.now()
+# print("request_type#fast api start" + str(strat1))
 app = FastAPI()
 
 
@@ -27,10 +27,11 @@ class OutputData(BaseModel):
 async def process_text(data: InputData):
     # You can modify this logic based on your processing
     input_text = data.Massage_Id
+    print("input_text === ", input_text)
     output_text = get_value(input_text)  # example: convert input to uppercase
-    end = datetime.datetime.now()
-    print("request_type#fast api end" + str(end))
-    print("total time taken by fast api = ", (end - strat1))
+    # end = datetime.datetime.now()
+    # print("request_type#fast api end" + str(end))
+    # print("total time taken by fast api = ", (end - strat1))
     # return {"result": output_text}
     return {"signal": "request_type", "value": output_text}
 
